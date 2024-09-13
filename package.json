@@ -1,0 +1,26 @@
+{
+  "name": "recettes-api",
+  "version": "1.0.0",
+  "description": "backend de gestion recettes",
+  "main": "/src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon /src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aichetou-Gaye/Gestion-Recettes-API.git"
+  },
+  "author": "Aichetou Gaye & Med Bankolé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aichetou-Gaye/Gestion-Recettes-API/issues"
+  },
+  "homepage": "https://github.com/Aichetou-Gaye/Gestion-Recettes-API#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.2",
+    "nodemon": "^3.1.4"
+  }
+}

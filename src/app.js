@@ -1,7 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { query, validationResult } from 'express-validator';
-import { connPool } from './config/db.js'
+// import { connPool } from './config/db.js'
+import connPool  from './config/database.js'
 const app = express();
 const port = 3000;
 

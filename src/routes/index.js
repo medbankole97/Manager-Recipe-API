@@ -12,6 +12,6 @@ router.delete("/dropRecipe/:id",deleteRequestValidator, RecipeController.deleteR
 
 router.put("/editRecipe/:id",updateRequestValidator, RecipeController.updateRecipe);
 
-router.get('/:id', RecipeController);
+router.get('/recipe/:id',deleteRequestValidator, RecipeController.getByID);
 
 export { router };

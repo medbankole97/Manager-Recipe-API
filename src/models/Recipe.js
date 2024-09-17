@@ -9,13 +9,22 @@ class Recipe {
     return result.length;
   }
 
-  static async getRecipeById(id) {
+  static async getId(id) {
     const connection = await pool.getConnection();
     const [result] = await connection.execute(
       "select * from recettes where id = ?",
       [id]
     );
     return result.length;
+  }
+
+  static async getRecipeById(id) {
+    const connection = await pool.getConnection();
+    const [result] = await connection.execute(
+      "select * from recettes where id = ?",
+      [id]
+    );
+    return result;
   }
 
   static async getRecipes() {

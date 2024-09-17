@@ -1,15 +1,11 @@
 import express from "express";
+import { router } from "./routes/index.js";
 import bodyParser from "body-parser";
-import { query, validationResult } from 'express-validator';
-// import { connPool } from './config/db.js'
-import connPool  from './config/database.js'
+
 const app = express();
-const port = 3000;
+app.use(bodyParser.json())
+app.use(router)
 
-app.get("/", (req, res) => {
-    res.send("Hello World");
-  });
-
-app.listen(port, () => {
-    console.log(`Successfully connected on ${port}`);
+app.listen(3001, () => {
+    console.log("Successfully connected on 3001");
 });

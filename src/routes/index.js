@@ -1,11 +1,17 @@
-const express = require('express');
+import express from "express";
+import { RecipeController } from "../controllers/RecipeController.js";
+import { addRequestValidator, deleteRequestValidator, updateRequestValidator } from "../validators/RecetteValidator.js";
+
 const router = express.Router();
-const { getAllRecipes, getRecipeById, createRecipe, updateRecipe, deleteRecipe } = require('../controllers/recipesController');
 
-router.get('/', getAllRecipes);
-router.get('/:id', getRecipeById);
-router.post('/', createRecipe);
-router.put('/:id', updateRecipe);
-router.delete('/:id', deleteRecipe);
+router.get("/allRecipes", RecipeController.getAllRecipes);
 
-module.exports = router;
+router.post("/newRecipe",addRequestValidator, RecipeController.createRecipe);
+
+router.delete("/dropRecipe/:id",deleteRequestValidator, RecipeController.deleteRecipe);
+
+router.put("/editRecipe/:id",updateRequestValidator, RecipeController.updateRecipe);
+
+router.get('/:id', RecipeController);
+
+export { router };

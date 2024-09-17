@@ -30,11 +30,13 @@ class Recipe {
       "INSERT INTO recettes(titre, ingredients, type) VALUES (?, ?, ?)",
       [titre, ingredients, type]
     );
+    return true;
   }
 
   static async delRecipe(id) {
     const connection = await pool.getConnection();
     await connection.execute("delete from recettes where id = ?", [id]);
+    return true;
   }
   static async editRecipe(id, titre, ingredients, type) {
     const connection = await pool.getConnection();
@@ -42,6 +44,7 @@ class Recipe {
       "update recettes set titre = ?, ingredients = ?, type = ? where id = ?",
       [titre, ingredients, type, id]
     );
+    return true;
   }
 }
 

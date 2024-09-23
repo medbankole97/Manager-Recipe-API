@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "abc91295-ef53-43b8-bf33-a2afebdb606f",
+		"_postman_id": "ca5eeab6-278e-4fda-bf10-b38b0afbecf4",
 		"name": "API-Recipes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38098502"
@@ -24,13 +24,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3001/allRecipes",
+					"raw": "localhost:3001/recipes",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"allRecipes"
+						"recipes"
 					]
 				}
 			},
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titre\": \"Omelette\",\r\n    \"ingredients\" : \"oeufs, huile, épices\",\r\n    \"type\": \"Dessert\"\r\n}",
+					"raw": "{\r\n    \"titre\": \"Spaghetti\",\r\n    \"ingredients\" : \"pates, viandes, tomates, huile, épices\",\r\n    \"type\": \"Plat\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,13 +51,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3001/newRecipe",
+					"raw": "localhost:3001/recipes",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"newRecipe"
+						"recipes"
 					]
 				}
 			},
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titre\": \"Omelette fromage\",\r\n    \"ingredients\" : \"oeufs, huile, fromage\",\r\n    \"type\": \"Plat\"\r\n}",
+					"raw": "{\r\n    \"titre\": \"Spaghetti bolognaise\",\r\n    \"ingredients\" : \"pates, viandes, tomates, huile, épices, fromage\",\r\n    \"type\": \"Plat\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,14 +78,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3001/editRecipe/9",
+					"raw": "localhost:3001/recipes/11",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"editRecipe",
-						"9"
+						"recipes",
+						"11"
 					]
 				}
 			},
@@ -106,14 +106,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3001/dropRecipe/5",
+					"raw": "localhost:3001/recipes/10",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"dropRecipe",
-						"5"
+						"recipes",
+						"10"
 					]
 				}
 			},

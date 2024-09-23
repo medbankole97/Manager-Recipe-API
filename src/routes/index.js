@@ -4,14 +4,14 @@ import { addRequestValidator, deleteRequestValidator, updateRequestValidator } f
 
 const router = express.Router();
 
-router.get("/allRecipes", RecipeController.getAllRecipes);
+router.get("/recipes", RecipeController.getAllRecipes);
 
-router.post("/newRecipe",addRequestValidator, RecipeController.createRecipe);
+router.post("/recipes",addRequestValidator, RecipeController.createRecipe);
 
-router.delete("/dropRecipe/:id",deleteRequestValidator, RecipeController.deleteRecipe);
+router.delete("/recipes/:id",deleteRequestValidator, RecipeController.deleteRecipe);
 
-router.put("/editRecipe/:id",updateRequestValidator, RecipeController.updateRecipe);
+router.put("/recipes/:id",updateRequestValidator, RecipeController.updateRecipe);
 
-router.get('/recipe/:id',deleteRequestValidator, RecipeController.getByID);
+router.get('/recipes/:id',deleteRequestValidator, RecipeController.getByID);
 
 export { router };

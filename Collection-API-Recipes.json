@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "abc91295-ef53-43b8-bf33-a2afebdb606f",
+		"name": "API-Recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38098502"
+	},
+	"item": [
+		{
+			"name": "GET-RECIPES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/allRecipes",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"allRecipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-RECIPES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\": \"Omelette\",\r\n    \"ingredients\" : \"oeufs, huile, épices\",\r\n    \"type\": \"Dessert\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/newRecipe",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"newRecipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT-RECIPES",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\": \"Omelette fromage\",\r\n    \"ingredients\" : \"oeufs, huile, fromage\",\r\n    \"type\": \"Plat\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/editRecipe/9",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"editRecipe",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-RECIPES",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/dropRecipe/5",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"dropRecipe",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

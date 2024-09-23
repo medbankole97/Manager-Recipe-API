@@ -1,4 +1,4 @@
-import { Recipe } from "../models/Recipe.js";
+import Recipe from "../models/Recipe.js";
 
 class RecipeController {
   static async getByID(req, res, next) {
@@ -60,4 +60,4 @@ class RecipeController {
   }
 }
 
-export { RecipeController };
+export default RecipeController;

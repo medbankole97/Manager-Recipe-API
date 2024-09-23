@@ -1,6 +1,6 @@
 import { check, param, validationResult } from "express-validator";
 import { StatusCodes } from "http-status-codes";
-import { Recipe } from "../models/Recipe.js";
+import Recipe from "../models/Recipe.js";
 
 const addRequestValidator = [
   check("titre")

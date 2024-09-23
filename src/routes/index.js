@@ -1,5 +1,5 @@
 import express from "express";
-import { RecipeController } from "../controllers/RecipeController.js";
+import RecipeController from "../controllers/RecipeController.js";
 import { addRequestValidator, deleteRequestValidator, updateRequestValidator } from "../validators/RecetteValidator.js";
 
 const router = express.Router();
@@ -14,4 +14,4 @@ router.put("/recipes/:id",updateRequestValidator, RecipeController.updateRecipe)
 
 router.get('/recipes/:id',deleteRequestValidator, RecipeController.getByID);
 
-export { router };
+export default router;

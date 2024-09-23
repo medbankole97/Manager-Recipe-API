@@ -57,4 +57,4 @@ class Recipe {
   }
 }
 
-export { Recipe };
+export default Recipe;

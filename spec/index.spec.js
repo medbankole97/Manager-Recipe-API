@@ -20,7 +20,7 @@ describe("Recipe tests", () => {
     expect(getById).not.toBeNull();
   });
 
-  it("can't create recipe with invalid data", async () => {
+  it("can not create recipe with invalid data", async () => {
     try {
       const recipe = {
         titre: null,

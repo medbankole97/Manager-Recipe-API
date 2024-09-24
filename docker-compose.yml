@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  api:
+    env_file: .env
+    image: bideew14/recette-api
+    container_name: recette-api
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - ${NODE_LOCAL_PORT}:${NODE_DOCKER_PORT}
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_NAME: ${DB_NAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+  mysql:
+    env_file: .env
+    image: mysql
+    restart: always
+    container_name: gestion_recettes
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+
+volumes:
+  db:

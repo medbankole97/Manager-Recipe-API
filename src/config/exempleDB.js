@@ -2,8 +2,8 @@ import mysql from 'mysql2/promise';
 
 const connPool = mysql.createPool({
   host: 'localhost',
-  user: 'root',
-  password: 'isik2022',
+  user: '',
+  password: '',
   database: 'gestion_recettes',
   waitForConnections: true,
   connectionLimit: 100,

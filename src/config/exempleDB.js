@@ -2,9 +2,9 @@ import mysql from 'mysql2/promise'
 
 const connPool = mysql.createPool({
     host: "localhost",
-    user: "user",
-    password: "password",
-    database: "database_name",
+    user: "root",
+    password: "isik2022",
+    database: "gestion_recettes",
     waitForConnections: true,
     connectionLimit: 100,
     connectTimeout: 100000,

@@ -1,9 +1,9 @@
-import { pool } from "../config/db.js";
+import { pool } from '../config/db.js';
 class Recipe {
   static async checkRecipe(titre) {
     const connection = await pool.getConnection();
     const [result] = await connection.execute(
-      "select * from recettes where titre = ?",
+      'select * from recettes where titre = ?',
       [titre]
     );
     return result.length;
@@ -12,7 +12,7 @@ class Recipe {
   static async getId(id) {
     const connection = await pool.getConnection();
     const [result] = await connection.execute(
-      "select * from recettes where id = ?",
+      'select * from recettes where id = ?',
       [id]
     );
     return result.length;
@@ -21,7 +21,7 @@ class Recipe {
   static async getRecipeById(id) {
     const connection = await pool.getConnection();
     const [result] = await connection.execute(
-      "select * from recettes where id = ?",
+      'select * from recettes where id = ?',
       [id]
     );
     return result;
@@ -29,14 +29,14 @@ class Recipe {
 
   static async getRecipes() {
     const connection = await pool.getConnection();
-    const [result] = await connection.execute("select * from recettes");
+    const [result] = await connection.execute('select * from recettes');
     return result;
   }
 
   static async createRecipe(titre, ingredients, type) {
     const connection = await pool.getConnection();
     await connection.execute(
-      "INSERT INTO recettes(titre, ingredients, type) VALUES (?, ?, ?)",
+      'INSERT INTO recettes(titre, ingredients, type) VALUES (?, ?, ?)',
       [titre, ingredients, type]
     );
     return true;
@@ -44,13 +44,13 @@ class Recipe {
 
   static async delRecipe(id) {
     const connection = await pool.getConnection();
-    await connection.execute("delete from recettes where id = ?", [id]);
+    await connection.execute('delete from recettes where id = ?', [id]);
     return true;
   }
   static async editRecipe(id, titre, ingredients, type) {
     const connection = await pool.getConnection();
     await connection.execute(
-      "update recettes set titre = ?, ingredients = ?, type = ? where id = ?",
+      'update recettes set titre = ?, ingredients = ?, type = ? where id = ?',
       [titre, ingredients, type, id]
     );
     return true;

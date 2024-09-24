@@ -1,6 +1,6 @@
 # Gestion Recettes API
 
-Cette API permet de gérer des recettes, y compris leur création, lecture, mise à jour et suppression. 
+Cette API permet de gérer des recettes, y compris leur création, lecture, mise à jour et suppression.
 
 ## Prérequis
 
@@ -16,17 +16,18 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
     git clone https://github.com/Aichetou-Gaye/Gestion-Recettes-API.git
 ```
 
- 2. **Acceder au dossier du projet**
+2.  **Acceder au dossier du projet**
 
- ```bash
-   cd Gestion-Recettes-API
+```bash
+  cd Gestion-Recettes-API
 ```
 
 3. **Installez les dépendances**
-   
+
 ```bash
    npm install
 ```
+
 4. **Utilisation**
 
 - Pour démarrer le projet:
@@ -39,7 +40,7 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 
 ## Endpoints API
 
- **Récupérer toutes les recettes**
+**Récupérer toutes les recettes**
 
 - URL : /recipes
 - Méthode : GET
@@ -52,11 +53,12 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
         "ingredients": "Ingrédients de la recette 1",
         "type": "Entrée"
     },
-    
+
 ]
 ```
 
 **Créer une nouvelle recette**
+
 - URL : /recipes
 - Méthode : POST
 
@@ -67,30 +69,32 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
     "type": "Plat principal"
 }
 ```
+
 - Réponse: `"Added successfully"`
 
+  **Mettre à jour une recette**
 
- **Mettre à jour une recette**
 - URL : /recipes/:id
 - Méthode : PUT
- ```
- {
-    "titre": "Recette Modifiée",
-    "ingredients": "Ingrédients de la recette modifiée",
-    "type": "Dessert"
-   }
+
 ```
+{
+   "titre": "Recette Modifiée",
+   "ingredients": "Ingrédients de la recette modifiée",
+   "type": "Dessert"
+  }
+```
+
 - Réponse: `"Updated successfully"`
-  
- 
- **Supprimer une recette**
+
+  **Supprimer une recette**
+
 - URL : /recipes/:id
 - Méthode : DELETE
-  
- - Réponse:  `"Deleted successfully"`
-  
+- Réponse: `"Deleted successfully"`
 
-  ## Auteurs:
-  [Aichetou Gaye](https://github.com/Aichetou-Gaye)
+## Auteurs:
 
-  [Mohamed Bankolé](https://github.com/medbankole97)
+[Aichetou Gaye](https://github.com/Aichetou-Gaye)
+
+[Mohamed Bankolé](https://github.com/medbankole97)

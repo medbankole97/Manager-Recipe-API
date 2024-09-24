@@ -1,13 +1,13 @@
-import Recipe from "../src/models/Recipe.js";
+import Recipe from '../src/models/Recipe.js';
 
-describe("Recipe tests", () => {
+describe('Recipe tests', () => {
   let recipeId = null;
 
-  it("can create recipe", async () => {
+  it('can create recipe', async () => {
     const recipe = {
-      titre: "Milshake",
-      ingredients: "Lait, Chocolat, sucre",
-      type: "Dessert",
+      titre: 'Milshake',
+      ingredients: 'Lait, Chocolat, sucre',
+      type: 'Dessert',
     };
     const result = await Recipe.createRecipe(
       recipe.titre,
@@ -20,12 +20,12 @@ describe("Recipe tests", () => {
     expect(getById).not.toBeNull();
   });
 
-  it("can not create recipe with invalid data", async () => {
+  it('can not create recipe with invalid data', async () => {
     try {
       const recipe = {
         titre: null,
-        ingredients: "Lait, Chocolat, sucre",
-        type: "Dessert",
+        ingredients: 'Lait, Chocolat, sucre',
+        type: 'Dessert',
       };
       const result = await Recipe.createRecipe(
         recipe.titre,
@@ -41,16 +41,16 @@ describe("Recipe tests", () => {
     }
   });
 
-  it("Can get all recipes", async () => {
+  it('Can get all recipes', async () => {
     const getAll = await Recipe.getRecipes();
     expect(getAll).not.toBeNull();
   });
 
-  it("Can get recipe by valid ID", async () => {
+  it('Can get recipe by valid ID', async () => {
     const recipe = {
-      titre: "Pancakes",
-      ingredients: "Farine, Oeufs, Lait",
-      type: "Petit Déjeuner",
+      titre: 'Pancakes',
+      ingredients: 'Farine, Oeufs, Lait',
+      type: 'Petit Déjeuner',
     };
     const result = await Recipe.createRecipe(
       recipe.titre,
@@ -63,16 +63,16 @@ describe("Recipe tests", () => {
     expect(getById[0].titre).toBe(recipe.titre);
   });
 
-  it("Cannot get recipe by invalid ID", async () => {
+  it('Cannot get recipe by invalid ID', async () => {
     const getById = await Recipe.getRecipeById(9999); // Un ID qui n'existe pas
     expect(getById).toEqual([]);
   });
 
-  it("Can edit recipe", async () => {
+  it('Can edit recipe', async () => {
     const newRecipe = {
-      titre: "Pizza",
-      ingredients: "Farine, Tomate, Fromage",
-      type: "Dîner",
+      titre: 'Pizza',
+      ingredients: 'Farine, Tomate, Fromage',
+      type: 'Dîner',
     };
     const createResult = await Recipe.createRecipe(
       newRecipe.titre,
@@ -83,9 +83,9 @@ describe("Recipe tests", () => {
 
     // Modification de la recette
     const updatedRecipe = {
-      titre: "Pizza Deluxe",
-      ingredients: "Farine, Tomate, Fromage, Champignons",
-      type: "Dîner",
+      titre: 'Pizza Deluxe',
+      ingredients: 'Farine, Tomate, Fromage, Champignons',
+      type: 'Dîner',
     };
     await Recipe.editRecipe(
       recipeId,
@@ -95,15 +95,15 @@ describe("Recipe tests", () => {
     );
 
     const updated = await Recipe.getRecipeById(recipeId);
-    expect(updated[0].titre).toBe("Pizza Deluxe");
-    expect(updated[0].ingredients).toBe("Farine, Tomate, Fromage, Champignons");
+    expect(updated[0].titre).toBe('Pizza Deluxe');
+    expect(updated[0].ingredients).toBe('Farine, Tomate, Fromage, Champignons');
   });
 
-  it("Can delete recipe", async () => {
+  it('Can delete recipe', async () => {
     const recipe = {
-      titre: "Salade",
-      ingredients: "Laitue, Tomate, Concombre",
-      type: "Entrée",
+      titre: 'Salade',
+      ingredients: 'Laitue, Tomate, Concombre',
+      type: 'Entrée',
     };
     const result = await Recipe.createRecipe(
       recipe.titre,
@@ -119,17 +119,13 @@ describe("Recipe tests", () => {
     expect(checkDeleted).toEqual([]); // La recette doit être absente après la suppression
   });
 
-  it("Can check if recipe exists by title", async () => {
+  it('Can check if recipe exists by title', async () => {
     const recipe = {
-      titre: "Crêpes",
-      ingredients: "Farine, Oeufs, Lait",
-      type: "Dessert",
+      titre: 'Crêpes',
+      ingredients: 'Farine, Oeufs, Lait',
+      type: 'Dessert',
     };
-    await Recipe.createRecipe(
-      recipe.titre,
-      recipe.ingredients,
-      recipe.type
-    );
+    await Recipe.createRecipe(recipe.titre, recipe.ingredients, recipe.type);
 
     const check = await Recipe.checkRecipe(recipe.titre);
     expect(check).toBeGreaterThan(0);

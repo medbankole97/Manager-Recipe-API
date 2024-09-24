@@ -1,5 +1,7 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import pluginPrettier from 'eslint-plugin-prettier';
+import pluginPrettierConfig from 'eslint-config-prettier';
 
 export default [
   {
@@ -9,7 +11,7 @@ export default [
         process: 'readonly',
         __dirname: 'readonly',
         module: 'readonly',
-        jasmine: 'readonly', 
+        jasmine: 'readonly',
         describe: 'readonly',
         it: 'readonly',
         expect: 'readonly',
@@ -17,4 +19,13 @@ export default [
     },
   },
   pluginJs.configs.recommended,
+  {
+    plugins: {
+      prettier: pluginPrettier,
+    },
+    rules: {
+      'prettier/prettier': 'error', // Cela affiche une erreur lorsque Prettier trouve des problèmes de formatage
+    },
+  },
+  pluginPrettierConfig,
 ];

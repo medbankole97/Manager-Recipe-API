@@ -1,35 +1,35 @@
-import { check, param, validationResult } from "express-validator";
-import { StatusCodes } from "http-status-codes";
-import Recipe from "../models/Recipe.js";
+import { check, param, validationResult } from 'express-validator';
+import { StatusCodes } from 'http-status-codes';
+import Recipe from '../models/Recipe.js';
 
 const addRequestValidator = [
-  check("titre")
+  check('titre')
     .notEmpty()
-    .withMessage("Titre ne peut pas être vide!")
+    .withMessage('Titre ne peut pas être vide!')
     .bail()
     .isLength({ min: 6 })
-    .withMessage("Minimum 6 caractères requis!")
+    .withMessage('Minimum 6 caractères requis!')
     .bail()
     .custom(async (value) => {
       const result = await Recipe.checkRecipe(value);
       if (result !== 0) {
-        throw new Error("Cette recette existe déjà!");
+        throw new Error('Cette recette existe déjà!');
       }
       return true;
     }),
-  check("ingredients")
+  check('ingredients')
     .notEmpty()
-    .withMessage("Ingredients ne peut pas être vide!")
+    .withMessage('Ingredients ne peut pas être vide!')
     .bail()
     .isLength({ min: 10, max: 50 })
-    .withMessage("Entre 10 et 50 caractères!")
+    .withMessage('Entre 10 et 50 caractères!')
     .bail(),
-  check("type")
+  check('type')
     .notEmpty()
-    .withMessage("Type ne peut pas être vide!")
+    .withMessage('Type ne peut pas être vide!')
     .bail()
     .isLength({ min: 4 })
-    .withMessage("Minimum 4 caractères requis!")
+    .withMessage('Minimum 4 caractères requis!')
     .bail(),
   (req, res, next) => {
     const errors = validationResult(req);
@@ -42,10 +42,10 @@ const addRequestValidator = [
 ];
 
 const deleteRequestValidator = [
-  param("id")
+  param('id')
     .not()
     .isEmpty()
-    .withMessage("Id est obligatoire!")
+    .withMessage('Id est obligatoire!')
     .bail()
     .custom(async (value) => {
       const result = await Recipe.getId(value);
@@ -65,9 +65,9 @@ const deleteRequestValidator = [
 ];
 
 const updateRequestValidator = [
-  param("id")
+  param('id')
     .notEmpty()
-    .withMessage("Id est requis!")
+    .withMessage('Id est requis!')
     .bail()
     .custom(async (value) => {
       const result = await Recipe.getId(value);
@@ -76,33 +76,33 @@ const updateRequestValidator = [
       }
       return true;
     }),
-  check("titre")
+  check('titre')
     .notEmpty()
-    .withMessage("Titre ne doit pas être vide")
+    .withMessage('Titre ne doit pas être vide')
     .bail()
     .isLength({ min: 6 })
-    .withMessage("Minimum 6 caractères requis!")
+    .withMessage('Minimum 6 caractères requis!')
     .bail()
     .custom(async (value) => {
       const result = await Recipe.checkRecipe(value);
       if (result !== 0) {
-        throw new Error("Cette recette existe déjà!");
+        throw new Error('Cette recette existe déjà!');
       }
       return true;
     }),
-  check("ingredients")
+  check('ingredients')
     .notEmpty()
-    .withMessage("Ingredients ne peut pas être vide!")
+    .withMessage('Ingredients ne peut pas être vide!')
     .bail()
     .isLength({ min: 10, max: 50 })
-    .withMessage("Entre 10 et 50 caractères!")
+    .withMessage('Entre 10 et 50 caractères!')
     .bail(),
-  check("type")
+  check('type')
     .notEmpty()
-    .withMessage("Type ne peut pas être vide!")
+    .withMessage('Type ne peut pas être vide!')
     .bail()
     .isLength({ min: 4 })
-    .withMessage("Minimum 4 caractères requis!")
+    .withMessage('Minimum 4 caractères requis!')
     .bail(),
   (req, res, next) => {
     const errors = validationResult(req);

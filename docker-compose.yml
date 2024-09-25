@@ -10,8 +10,8 @@ services:
     volumes:
       - db:/var/lib/mysql
     ports:
-      - "3307:3306"
-      
+      - '3307:3306'
+
   api:
     image: recette-api
     container_name: recette-api
@@ -23,11 +23,11 @@ services:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
-      DB_PORT: ${DB_PORT} 
+      DB_PORT: ${DB_PORT}
     ports:
-      - "3020:3020"
+      - '3020:3020'
     depends_on:
       - database
-  
+
 volumes:
   db:

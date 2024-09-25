@@ -92,22 +92,22 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 - URL : /recipes/:id
 - Méthode : DELETE
 - Réponse: `"Deleted successfully"`
-  
 
 ### Les étapes pour construire et lancer le conteneur Docker:
+
 ```bash
 docker compose up --build
-  ```
+```
 
- ``` bash
- docker exec -it gestion_recettes mysql -u root -p
- ```
+```bash
+docker exec -it gestion_recettes mysql -u root -p
+```
 
 ### Pour exécuter les tests unitaires:
+
 ```bash
 npm test
-````
-
+```
 
 ## Auteurs:
 

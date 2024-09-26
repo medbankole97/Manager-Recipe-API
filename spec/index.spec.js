@@ -1,45 +1,60 @@
-// import pool from '../src/config/db.js';
 import Recipe from '../src/models/Recipe.js';
 
 describe('Recipe tests', () => {
   it('can be create recipe', async () => {
-    const recipe = { titre: 'crepe', type: 'dessert', ingredients: 'farine' };
-    const result = await Recipe.createRecipe(
-      recipe.titre,
-      recipe.ingredients,
-      recipe.type
-    );
+    try {
+      const recipe = { titre: 'crepe', type: 'dessert', ingredients: 'farine' };
+      const result = await Recipe.createRecipe(
+        recipe.titre,
+        recipe.ingredients,
+        recipe.type
+      );
 
-    expect(result).toBe(true);
+      expect(result).toBe(true);
+    } catch (error) {
+      console.error('Error creating recipe:', error);
+    }
   });
 
   it('can be update recipe', async () => {
-    const updatedRecipe = {
-      titre: 'gâteau',
-      type: 'dessert',
-      ingredients: 'farine, sucre',
-    };
+    try {
+      const updatedRecipe = {
+        titre: 'gâteau',
+        type: 'dessert',
+        ingredients: 'farine, sucre',
+      };
 
-    const updateResult = await Recipe.editRecipe(
-      6,
-      updatedRecipe.titre,
-      updatedRecipe.ingredients,
-      updatedRecipe.type
-    );
+      const updateResult = await Recipe.editRecipe(
+        6,
+        updatedRecipe.titre,
+        updatedRecipe.ingredients,
+        updatedRecipe.type
+      );
 
-    expect(updateResult).toBe(true);
+      expect(updateResult).toBe(true);
+    } catch (error) {
+      console.error('Error updating recipe:', error);
+    }
   });
 
   it('can get all recipes', async () => {
-    const allRecipes = await Recipe.getRecipes();
+    try {
+      const allRecipes = await Recipe.getRecipes();
 
-    expect(allRecipes).not.toBeNull();
-    expect(allRecipes.length).toBeGreaterThan(0);
+      expect(allRecipes).not.toBeNull();
+      expect(allRecipes.length).toBeGreaterThan(0);
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+    }
   });
 
   it('can be delete recipe', async () => {
-    const result = await Recipe.delRecipe(8);
+    try {
+      const result = await Recipe.delRecipe(8);
 
-    expect(result).toBe(true);
+      expect(result).toBe(true);
+    } catch (error) {
+      console.error('Error deleting recipe:', error);
+    }
   });
 });

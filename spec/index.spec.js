@@ -24,7 +24,7 @@ describe('Recipe tests', () => {
       };
 
       const updateResult = await Recipe.editRecipe(
-        6,
+        16,
         updatedRecipe.titre,
         updatedRecipe.ingredients,
         updatedRecipe.type

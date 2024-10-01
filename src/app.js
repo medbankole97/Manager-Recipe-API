@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(router);
 
-const PORT = process.env.NODE_DOCKER_PORT || 3021;
+const PORT = process.env.NODE_DOCKER_PORT || 3020;
 app.listen(PORT, () => {
   console.log(`Successfully connected on ${PORT} `);
 });

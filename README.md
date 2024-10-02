@@ -27,8 +27,28 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 ```bash
    npm install
 ```
+**Configuration de la base de données**
+- Assurer-vous que Mysql est en cours d'exécution sur votre machine.
+- Céer une base de données pour le projet.
+- Modifier le fichier .en.exemple en le nommant `.env` pour inserer le informations de connexion à la base de données, ces modifications sont valables pour le fichier `.en.test.exemple` pour l'utilisation de l'image docker.
+  
+  **Fichier `.env`:
+  ```bash
+    DB_HOST = localhost
+    DB_NAME = NAME
+    DB_USER = USER
+    DB_PASSWORD = isik2022
+    DB_ROOT_PASSWORD = isik2022
+    DB_PORT = 3308
 
-4. **Utilisation**
+    NODE_LOCAL_PORT = 3020
+
+    MYSQL_ROOT_PASSWORD = PASSWORD
+    MYSQL_DATABASE = NAME_DB
+  ```
+
+
+1. **Utilisation**
 
 - Pour démarrer le projet:
 
@@ -92,6 +112,5 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
   
 
   ## Auteurs:
-  [Aichetou Gaye](https://github.com/Aichetou-Gaye)
-
+ 
   [Mohamed Bankolé](https://github.com/medbankole97)

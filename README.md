@@ -13,20 +13,21 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 1. **Clonez le dépôt** :
 
 ```bash
-    git clone https://github.com/Aichetou-Gaye/Gestion-Recettes-API.git
+    git clone https://github.com/medbankole97/Manager-Recipe-API.git
 ```
 
- 2. **Acceder au dossier du projet**
+2.  **Acceder au dossier du projet**
 
- ```bash
-   cd Gestion-Recettes-API
+```bash
+  cd Manager-Recipe-API.git
 ```
 
 3. **Installez les dépendances**
-   
+
 ```bash
    npm install
 ```
+
 4. **Utilisation**
 
 - Pour démarrer le projet:

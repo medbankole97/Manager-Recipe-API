@@ -1,4 +1,4 @@
-import { Recipe } from "../models/Recipe.js";
+import Recipe from '../models/Recipe.js';
 
 class RecipeController {
   static async getByID(req, res, next) {
@@ -27,7 +27,7 @@ class RecipeController {
       const ingredients = req.body.ingredients;
       const type = req.body.type;
       await Recipe.createRecipe(titre, ingredients, type);
-      res.json("Added successfully");
+      res.json('Added successfully');
     } catch (error) {
       console.log(error.message);
     }
@@ -38,7 +38,7 @@ class RecipeController {
     try {
       const id = req.params.id;
       await Recipe.delRecipe(id);
-      res.json("Deleted successfully");
+      res.json('Deleted successfully');
     } catch (error) {
       console.log(error.message);
     }
@@ -52,12 +52,11 @@ class RecipeController {
       const ingredients = req.body.ingredients;
       const type = req.body.type;
       await Recipe.editRecipe(id, titre, ingredients, type);
-      res.json("Updted successfully");
+      res.json('Updted successfully');
     } catch (error) {
       console.log(error.message);
     }
     next();
   }
 }
-
-export { RecipeController };
+export default RecipeController;

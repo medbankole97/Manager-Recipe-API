@@ -125,6 +125,11 @@ npm run lint
 ```bash
 npm run Format
 ```
+
+### Pour le conteneur
+```bash
+docker-compose up
+```
 ## Auteurs:
  
   [Mohamed Bankolé](https://github.com/medbankole97)

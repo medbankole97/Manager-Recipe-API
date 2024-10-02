@@ -32,7 +32,7 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 - Céer une base de données pour le projet.
 - Modifier le fichier .en.exemple en le nommant `.env` pour inserer le informations de connexion à la base de données, ces modifications sont valables pour le fichier `.en.test.exemple` pour l'utilisation de l'image docker.
   
-  **Fichier `.env`:
+  **Exemple Fichier** `.env`:
   ```bash
     DB_HOST = localhost
     DB_NAME = NAME
@@ -111,6 +111,20 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
  - Réponse:  `"Deleted successfully"`
   
 
-  ## Auteurs:
+### Pour le test unitaire
+```bash
+npm test
+```
+
+**Eslint**
+```bash
+npm run lint
+```
+
+**Prettier**
+```bash
+npm run Format
+```
+## Auteurs:
  
   [Mohamed Bankolé](https://github.com/medbankole97)

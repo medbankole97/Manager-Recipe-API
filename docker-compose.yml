@@ -15,7 +15,7 @@ services:
       - '3309:3308'
 
   app:
-    env_file: .env
+    env_file: .env.test
     image: recette-api
     container_name: recette-api
     build: .

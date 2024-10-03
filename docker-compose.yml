@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    env_file: .env.test
+    env_file: .env
     image: mysql
     container_name: gestion_recettes
     restart: always
@@ -15,7 +15,7 @@ services:
       - '3309:3308'
 
   app:
-    env_file: .env.test
+    env_file: .env
     image: recette-api
     container_name: recette-api
     build: .

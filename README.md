@@ -30,21 +30,21 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 **Configuration de la base de données**
 - Assurer-vous que Mysql est en cours d'exécution sur votre machine.
 - Céer une base de données pour le projet.
-- Modifier le fichier .en.exemple en le nommant `.env` pour inserer le informations de connexion à la base de données, ces modifications sont valables pour le fichier `.en.test.exemple` pour l'utilisation de l'image docker.
+- Modifier le fichier .en.exemple en le nommant `.env` pour inserer le informations de connexion à la base de données.
   
   **Exemple Fichier** `.env`:
   ```bash
     DB_HOST = localhost
-    DB_NAME = NAME
-    DB_USER = USER
-    DB_PASSWORD = isik2022
-    DB_ROOT_PASSWORD = isik2022
+    DB_NAME = gestion_recettes
+    DB_USER = User
+    DB_PASSWORD = password
+    DB_ROOT_PASSWORD = password
     DB_PORT = 3308
 
     NODE_LOCAL_PORT = 3020
 
-    MYSQL_ROOT_PASSWORD = PASSWORD
-    MYSQL_DATABASE = NAME_DB
+    MYSQL_ROOT_PASSWORD = password
+    MYSQL_DATABASE = gestion_recettes
   ```
 
 
@@ -56,8 +56,10 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
    npm start
 ```
 
-- Importer la collection (Collection.json) dans postman pour effectuer des tests;
 
+**La base de données est sous le nom de : `script.sql` situé dans la racine**
+
+**La collection postman exportée : `Gestion-Recette.json` dans la racine**
 ## Endpoints API
 
  **Récupérer toutes les recettes**
@@ -112,6 +114,8 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
   
 
 ### Pour le test unitaire
+
+- dans le fichier `.env` vous devez avoir **DB_HOST = localhost** avant de faire les tests
 ```bash
 npm test
 ```
@@ -126,9 +130,10 @@ npm run lint
 npm run Format
 ```
 
-### Pour le conteneur
+### Pour les conteneurs:
+- dans le fichier `.env` remplacer DB_HOST = localhost par  **DB_HOST = db**
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 ## Auteurs:
  

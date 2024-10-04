@@ -77,10 +77,29 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
         "ingredients": "Ingrédients de la recette 1",
         "type": "Entrée"
     },
+    {
+    "id": 2,
+    "titre": "Recette 2",
+    "ingredients": "Ingrédients de la recette 2",
+    "type": "Plat"
+  }
 
 ]
 ```
+**Voir les détails d'une recette**
 
+- URL : /recipes/:id
+- Méthode : GET
+```  
+[
+  {
+    "id": 2,
+    "titre": "Recette 2",
+    "ingredients": "Ingrédients de la recette 2",
+    "type": "Plat"
+  }
+]
+````
 **Créer une nouvelle recette**
 
 - URL : /recipes

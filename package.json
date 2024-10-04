@@ -15,24 +15,20 @@
     "type": "git",
     "url": ""
   },
-  "author": "Aichetou Gaye & Med Bankolé",
+  "author": "Med Bankolé",
   "license": "ISC",
-  "bugs": {
-   
-  },
+  "bugs": {},
   "homepage": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.0",
     "express-validator": "^7.2.0",
     "http-status-codes": "^2.3.0",
-    "mysql": "^2.18.1",
     "mysql2": "^3.11.2",
     "nodemon": "^3.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
-    "@types/jest": "^29.5.13",
     "dotenv": "^16.4.5",
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
@@ -40,8 +36,6 @@
     "globals": "^15.9.0",
     "jasmine": "^5.3.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "jest": "^29.7.0",
-    "prettier": "^3.3.3",
-    "ts-jest": "^29.2.5"
+    "prettier": "^3.3.3"
   }
 }

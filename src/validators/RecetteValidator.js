@@ -28,7 +28,7 @@ const addRequestValidator = [
     .notEmpty()
     .withMessage('Type ne peut pas être vide!')
     .bail()
-    .isLength({ min: 4 })
+    .isLength({ min: 3 })
     .isIn(['Entrée', 'Plat', 'Dessert'])
     .withMessage('Minimum 4 caractères requis!')
     .bail(),

@@ -1,6 +1,6 @@
 # Gestion Recettes API
 
-Cette API permet de gérer des recettes, y compris leur création, lecture, mise à jour et suppression. 
+Cette API permet de gérer des recettes, y compris leur création, lecture, mise à jour et suppression.
 
 ## Prérequis
 
@@ -27,12 +27,15 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
 ```bash
    npm install
 ```
+
 **Configuration de la base de données**
+
 - Assurer-vous que Mysql est en cours d'exécution sur votre machine.
 - Céer une base de données pour le projet.
 - Modifier le fichier .en.exemple en le nommant `.env` pour inserer le informations de connexion à la base de données.
-  
+
   **Exemple Fichier** `.env`:
+
   ```bash
     DB_HOST = localhost
     DB_NAME = gestion_recettes
@@ -47,7 +50,6 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
     MYSQL_DATABASE = gestion_recettes
   ```
 
-
 1. **Utilisation**
 
 - Pour démarrer le projet:
@@ -56,13 +58,13 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
    npm start
 ```
 
-
 **La base de données est sous le nom de : `script.sql` situé dans la racine**
 
 **La collection postman exportée : `Gestion-Recette.json` dans la racine**
+
 ## Endpoints API
 
- **Récupérer toutes les recettes**
+**Récupérer toutes les recettes**
 
 - URL : /recipes
 - Méthode : GET
@@ -75,11 +77,12 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
         "ingredients": "Ingrédients de la recette 1",
         "type": "Entrée"
     },
-    
+
 ]
 ```
 
 **Créer une nouvelle recette**
+
 - URL : /recipes
 - Méthode : POST
 
@@ -90,51 +93,68 @@ Cette API permet de gérer des recettes, y compris leur création, lecture, mise
     "type": "Plat principal"
 }
 ```
+
 - Réponse: `"Added successfully"`
 
+  **Mettre à jour une recette**
 
- **Mettre à jour une recette**
 - URL : /recipes/:id
 - Méthode : PUT
- ```
- {
-    "titre": "Recette Modifiée",
-    "ingredients": "Ingrédients de la recette modifiée",
-    "type": "Dessert"
-   }
+
 ```
+{
+   "titre": "Recette Modifiée",
+   "ingredients": "Ingrédients de la recette modifiée",
+   "type": "Dessert"
+  }
+```
+
 - Réponse: `"Updated successfully"`
-  
- 
- **Supprimer une recette**
+
+  **Supprimer une recette**
+
 - URL : /recipes/:id
 - Méthode : DELETE
-  
- - Réponse:  `"Deleted successfully"`
-  
+- Réponse: `"Deleted successfully"`
 
 ### Pour le test unitaire
 
 - dans le fichier `.env` vous devez avoir **DB_HOST = localhost** avant de faire les tests
+
 ```bash
 npm test
 ```
 
 **Eslint**
+
 ```bash
 npm run lint
 ```
 
 **Prettier**
+
 ```bash
 npm run Format
 ```
 
 ### Pour les conteneurs:
-- dans le fichier `.env` remplacer DB_HOST = localhost par  **DB_HOST = db**
+
+- dans le fichier `.env` remplacer DB_HOST = localhost par **DB_HOST = db**
+
+**Builder l'image docker**
+
+```bash
+docker compose build
+```
+
+**Lancer le conteneur**
+
 ```bash
 docker-compose up -d
 ```
-## Auteurs:
- 
-  [Mohamed Bankolé](https://github.com/medbankole97)
+
+## Le lien vers l'image DockerHub pour accéder à la version conteneurisée de l’application: [Cliquez ici](https://hub.docker.com/r/medbankole/recette-api)
+
+## Auteur:
+
+[Mohamed Bankolé](https://github.com/medbankole97)

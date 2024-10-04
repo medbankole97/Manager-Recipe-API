@@ -1,104 +1,88 @@
 {
-	"info": {
-		"_postman_id": "92825f29-333b-48c7-99e9-8776cd1ff17d",
-		"name": "Gestion-Recette",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38098528"
-	},
-	"item": [
-		{
-			"name": "GET-RECETTES",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3020/recipes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3020",
-					"path": [
-						"recipes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST-RECETTES",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": " {\r\n        \"titre\": \"Milshake  ff\",\r\n        \"ingredients\": \"Lait, Chocolat, sucre\",\r\n        \"type\": \"type\"\r\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3020/recipes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3020",
-					"path": [
-						"recipes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT-RECETTES",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "   {\r\n        \"titre\": \"crepe vip sss\",\r\n        \"ingredients\": \"farine ss\",\r\n        \"type\": \"dessert sfsfg\"\r\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3020/recipes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3020",
-					"path": [
-						"recipes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE-RECETTES",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3020/recipes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3020",
-					"path": [
-						"recipes"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "92825f29-333b-48c7-99e9-8776cd1ff17d",
+    "name": "Gestion-Recette",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38098528"
+  },
+  "item": [
+    {
+      "name": "GET-RECETTES",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3020/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3020",
+          "path": ["recipes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-RECETTES",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"titre\": \"Milshake  ff\",\r\n        \"ingredients\": \"Lait, Chocolat, sucre\",\r\n        \"type\": \"type\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3020/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3020",
+          "path": ["recipes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT-RECETTES",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n        \"titre\": \"crepe vip sss\",\r\n        \"ingredients\": \"farine ss\",\r\n        \"type\": \"dessert sfsfg\"\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3020/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3020",
+          "path": ["recipes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE-RECETTES",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3020/recipes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3020",
+          "path": ["recipes"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
